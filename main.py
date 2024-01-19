@@ -1,4 +1,3 @@
-import resources
 import pygame
 import sys
 
@@ -30,21 +29,64 @@ class Card:
         for i in front_row_list:
             if i.selected is True and i is not self:
                 if i.color != self.color and int(i.number) == int(self.number) - 1:
-                    print("1")
                     gameDisplay.blit(table, (0, 0))
                     i.coords[0] = self.coords[0]
                     i.coords[1] = self.coords[1] + 35
                     i.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
 
 
+
+                    # TODO NEEDS FIXING, IS A MESS! CARD WITH CARD STAIR UNDERNEATH THEM NEEDS TO MOVE CORRECTLY
                     for lista in card_list:
                         if i in lista:
                             lista.remove(i)
+                            for col in card_list:
+                                for card in col:
+                                    if i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - 35:
+                                        if i.color != card.color and int(i.number) == int(card.number) - 1:
+                                            lista.remove(card)
+                                            for col in card_list:
+                                                for card in col:
+                                                    if (i.coords[0] == card.coords[0]
+                                                            and i.coords[1] == card.coords[1] - 70):
+                                                        if (i.color == card.color
+                                                                and int(i.number) == int(card.number) - 2):
+                                                            lista.remove(card)
+                                                            for col in card_list:
+                                                                for card in col:
+                                                                    if (i.coords[0] == card.coords[0]
+                                                                            and i.coords[1] == card.coords[1] - 105):
+                                                                        if (i.color != card.color
+                                                                                and int(i.number) == int(
+                                                                                    card.number) - 3):
+                                                                            lista.remove(card)
+                            # for lista2 in card_list:
+                            #     if self in lista2:
+                            #         lista2.append(i)
+
+                            for col in card_list:
+                                for card in col:
+                                    if i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - 35:
+                                        if i.color != card.color and int(i.number) == int(card.number) - 1:
+                                            for lista2 in card_list:
+                                                if self in lista2:
+                                                    lista2.append(card)
+                                                    for col in card_list:
+                                                        for card in col:
+                                                            if (i.coords[0] == card.coords[0]
+                                                                    and i.coords[1] == card.coords[1] - 70):
+                                                                if (i.color == card.color
+                                                                        and int(i.number) == int(card.number) - 2):
+                                                                    for lista2 in card_list:
+                                                                        if self in lista2:
+                                                                            lista2.append(card)
+
                             for lista2 in card_list:
                                 if self in lista2:
                                     lista2.append(i)
 
                     aux_card_list = []
+
                     def sort_func(e):
                         for i in e:
                             return i.coords[1]
@@ -57,10 +99,10 @@ class Card:
                         for c in i:
                             gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
                     pygame.display.update()
+
         for i in front_row_list:
             i.selected = False
         self.selected = True
-
 
 
 class Boxes:
@@ -77,6 +119,7 @@ class Boxes:
                     gameDisplay.blit(table, (0, 0))
                     i.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
                     aux_card_list = []
+
                     def sort_func(e):
                         for i in e:
                             return i.coords[1]
@@ -178,17 +221,23 @@ def front_row():
     def sort_func(e):
         return e.coords[1]
 
-
     for i in card_list:
         i.sort(key=sort_func)
+
         if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
-            if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
-                if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
-                    if i[-4].color != i[-5].color and int(i[-3].number) == int(i[-4].number) - 1:
+            if i[-2].color == i[-3].color and int(i[-2].number) == int(i[-3].number) - 2:
+                if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 3:
+                    if i[-4].color == i[-5].color and int(i[-4].number) == int(i[-5].number) - 4:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
                         front_row_list.append(i[-4])
                 else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
                     front_row_list.append(i[-3])
             else:
+                front_row_list.append(i[-1])
                 front_row_list.append(i[-2])
         else:
             front_row_list.append(i[-1])
