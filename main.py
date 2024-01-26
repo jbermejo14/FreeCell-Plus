@@ -28,58 +28,162 @@ class Card:
 
     def clicked(self):
         for i in front_row_list:
-            if i.selected is True and i is not self:
-                if i.color != self.color and int(i.number) == int(self.number) - 1:
-                    gameDisplay.blit(table, (0, 0))
-                    i.coords[0] = self.coords[0]
-                    i.coords[1] = self.coords[1] + 35
-                    i.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
+            if i.selected is True and i is not self and i.color != self.color and int(i.number) == int(self.number) - 1:
+                append = 0
+                for lista in card_list:
+                    if i in lista:
+                        aux = i
+                        lista.remove(i)
+                        for col in card_list:
+                            for card in col:
+                                if (aux.coords[0] == card.coords[0] and aux.coords[1] == card.coords[1] - 35
+                                        and aux.color != card.color and int(aux.number) - 1 == int(card.number)):
+                                    lista.remove(card)
+                                    aux2 = card
+                                    append = 1
+                                    for col in card_list:
+                                        for card in col:
+                                            if (aux.coords[0] == card.coords[0] and aux.coords[1] == card.coords[1] - 70
+                                                    and aux.color == card.color and int(aux.number) - 2 == int(
+                                                        card.number)):
+                                                lista.remove(card)
+                                                aux3 = card
+                                                append = 2
+                                                for col in card_list:
+                                                    for card in col:
+                                                        if (aux.coords[0] == card.coords[0] and aux.coords[1] ==
+                                                                card.coords[1] - 105
+                                                                and aux.color != card.color and int(
+                                                                    aux.number) - 3 == int(
+                                                                    card.number)):
+                                                            lista.remove(card)
+                                                            aux4 = card
+                                                            append = 3
+                                                            for col in card_list:
+                                                                for card in col:
+                                                                    if (aux.coords[0] == card.coords[0] and aux.coords[
+                                                                        1] ==
+                                                                            card.coords[1] - 140
+                                                                            and aux.color == card.color and int(
+                                                                                aux.number) - 4 == int(
+                                                                                card.number)):
+                                                                        lista.remove(card)
+                                                                        aux5 = card
+                                                                        append = 4
+                                                                        for col in card_list:
+                                                                            for card in col:
+                                                                                if (aux.coords[0] == card.coords[0] and
+                                                                                        aux.coords[
+                                                                                            1] ==
+                                                                                        card.coords[1] - 175
+                                                                                        and aux.color == card.color and int(
+                                                                                            aux.number) - 5 == int(
+                                                                                            card.number)):
+                                                                                    lista.remove(card)
+                                                                                    aux6 = card
+                                                                                    append = 5
 
-                    for lista in card_list:
-                        if i in lista:
-                            lista.remove(i)
-                            for lista2 in card_list:
-                                if self in lista2:
-                                    lista2.append(i)
+                        for lista2 in card_list:
+                            if self in lista2:
+                                lista2.append(i)
+                                gameDisplay.blit(table, (0, 0))
+                                i.coords[0] = self.coords[0]
+                                i.coords[1] = self.coords[1] + 35
+                                i.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
+                                if append == 1:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                if append == 2:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                if append == 3:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                    lista2.append(aux4)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux4.coords[0] = aux3.coords[0]
+                                    aux4.coords[1] = aux3.coords[1] + 35
+                                    aux4.top_rect = pygame.Rect(aux4.coords[0], aux4.coords[1], 102, 155)
+                                if append == 4:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                    lista2.append(aux4)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux4.coords[0] = aux3.coords[0]
+                                    aux4.coords[1] = aux3.coords[1] + 35
+                                    aux4.top_rect = pygame.Rect(aux4.coords[0], aux4.coords[1], 102, 155)
+                                    lista2.append(aux5)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux5.coords[0] = aux4.coords[0]
+                                    aux5.coords[1] = aux4.coords[1] + 35
+                                    aux5.top_rect = pygame.Rect(aux5.coords[0], aux5.coords[1], 102, 155)
+                                if append == 5:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                    lista2.append(aux4)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux4.coords[0] = aux3.coords[0]
+                                    aux4.coords[1] = aux3.coords[1] + 35
+                                    aux4.top_rect = pygame.Rect(aux4.coords[0], aux4.coords[1], 102, 155)
+                                    lista2.append(aux5)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux5.coords[0] = aux4.coords[0]
+                                    aux5.coords[1] = aux4.coords[1] + 35
+                                    aux5.top_rect = pygame.Rect(aux5.coords[0], aux5.coords[1], 102, 155)
+                                    lista2.append(aux6)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux6.coords[0] = aux5.coords[0]
+                                    aux6.coords[1] = aux5.coords[1] + 35
+                                    aux6.top_rect = pygame.Rect(aux6.coords[0], aux6.coords[1], 102, 155)
+                aux_card_list = []
 
-                    # TODO NEEDS FIXING, IS A MESS! CARD WITH CARD STAIR UNDERNEATH THEM NEEDS TO MOVE CORRECTLY
-                    # for lista in card_list:
-                    #     if i in lista:
-                    #         aux = i
-                    #         lista.remove(i)
-                    #         for col in card_list:
-                    #             print("col")
-                    #             for card in col:
-                    #                 if aux.coords[0] == card.coords[0] and aux.coords[1] == card.coords[1] - 35:
-                    #                     if aux.color != card.color and int(aux.number) == int(card.number) - 1:
-                    #                         lista.remove(card)
-                    #
-                    #         for col in card_list:
-                    #             for card in col:
-                    #                 if i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - 35:
-                    #                     if i.color != card.color and int(i.number) == int(card.number) - 1:
-                    #                         for lista2 in card_list:
-                    #                             if self in lista2:
-                    #                                 lista2.append(card)
-                    #
-                    #         for lista2 in card_list:
-                    #             if self in lista2:
-                    #                 lista2.append(i)
+                def sort_func(e):
+                    for i in e:
+                        return i.coords[1]
 
-                    aux_card_list = []
+                for i in card_list:
+                    aux_card_list.append(i)
+                aux_card_list.sort(key=sort_func)
 
-                    def sort_func(e):
-                        for i in e:
-                            return i.coords[1]
-
-                    for i in card_list:
-                        aux_card_list.append(i)
-                    aux_card_list.sort(key=sort_func)
-
-                    for i in aux_card_list:
-                        for c in i:
-                            gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
-                    pygame.display.update()
+                for i in aux_card_list:
+                    for c in i:
+                        gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
+                pygame.display.update()
 
         for i in front_row_list:
             i.selected = False
@@ -118,6 +222,7 @@ class Boxes:
         for i in front_row_list:
             i.selected = False
 
+
 class House:
     def __init__(self, coords, house_of):
         self.house_of = house_of
@@ -152,11 +257,11 @@ class House:
         for i in front_row_list:
             i.selected = False
 
+
 House1 = House((570, 0), "Diamonds")
 House2 = House((686, 0), "Hearts")
 House3 = House((801, 0), "Claves")
 House4 = House((918, 0), "Spades")
-
 
 Box1 = Boxes([4.5, 0])
 Box2 = Boxes([119, 0])
@@ -245,6 +350,7 @@ card_list = [c0, c1, c2, c3, c4, c5, c6, c7]
 box_list = [Box1, Box2, Box3, Box4]
 house_list = [House1, House2, House3, House4]
 
+
 def front_row():
     front_row_list = []
 
@@ -258,13 +364,32 @@ def front_row():
         i.sort(key=sort_func)
 
         if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
-            if i[-2].color == i[-3].color and int(i[-2].number) == int(i[-3].number) - 2:
-                if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 3:
-                    if i[-4].color == i[-5].color and int(i[-4].number) == int(i[-5].number) - 4:
+            if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                print(i[-1].name, i[-2].name, i[-3].name, i[-4].name)
+                if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                    if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                        if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                            if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
+                                print("sui")
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                                front_row_list.append(i[-6])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                            front_row_list.append(i[-5])
+                    else:
                         front_row_list.append(i[-1])
                         front_row_list.append(i[-2])
                         front_row_list.append(i[-3])
                         front_row_list.append(i[-4])
+                        print("4")
                 else:
                     front_row_list.append(i[-1])
                     front_row_list.append(i[-2])
@@ -277,7 +402,7 @@ def front_row():
     return front_row_list
 
 
-for i in range(51):
+for i in range(52):
     for card in card_list_init:
         if len(list1) != 0:
             num = random.randint(0, len(list1) - 1)
@@ -327,12 +452,15 @@ def check_click():
         if house.top_rect.collidepoint(posm):
             house.clicked()
 
+
 while not gameExit:
 
-    if pygame.mouse.get_pressed()[0] is True:
+    if pygame.mouse.get_pressed()[2] is True:
         check_click()
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
+
+# Boxes can't hold a card after a card has been inside
