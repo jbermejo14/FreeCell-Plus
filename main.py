@@ -356,6 +356,52 @@ class Boxes:
             i.selected = False
 
 
+class Column:
+    def __init__(self, coords, col):
+        self.col = col
+        self.coords = coords
+        self.filled = False
+        self.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
+
+    def clicked(self):
+        for i in front_row_list:
+            if i.selected is True:
+                if self.filled is False:
+                    i.coords = self.coords
+                    gameDisplay.blit(table, (0, 0))
+                    i.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
+                    i.in_box = True
+                    for list in card_list:
+                        if i in list:
+                            list.remove(i)
+                            self.col.append(i)
+                    aux_card_list = []
+
+                    def sort_func(e):
+                        for i in e:
+                            return i.coords[1]
+
+                    for i in card_list:
+                        if i != []:
+                            aux_card_list.append(i)
+                    aux_card_list.sort(key=sort_func)
+
+                    for i in box_card_list:
+                        gameDisplay.blit(i.card, (i.coords[0], i.coords[1], 102, 155))
+
+                    for i in house_card_list:
+                        gameDisplay.blit(i.card, (i.coords[0], i.coords[1], 102, 155))
+
+                    for i in aux_card_list:
+                        for c in i:
+                            gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
+                    pygame.display.update()
+                    self.filled = True
+
+        for i in front_row_list:
+            i.selected = False
+
+
 class House:
     def __init__(self, coords, house_of):
         self.house_of = house_of
@@ -496,6 +542,17 @@ box_list = [Box1, Box2, Box3, Box4]
 house_list = [House1, House2, House3, House4]
 
 
+Column1 = Column([102.4, 175], c0)
+Column2 = Column([204.8, 175], c1)
+Column3 = Column([307.2, 175], c2)
+Column4 = Column([409.6, 175], c3)
+Column5 = Column([512, 175], c4)
+Column6 = Column([614.4, 175], c5)
+Column7 = Column([716.8, 175], c6)
+Column8 = Column([819.2, 175], c7)
+
+column_list = [Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8]
+
 def front_row():
     front_row_list = []
 
@@ -506,9 +563,14 @@ def front_row():
 
     for i in card_list:
         if len(i) == 1:
+
+            print("1")
             front_row_list.append(i[-1])
         elif len(i) == 0:
-            print("empty")
+            print("0")
+            for column in column_list:
+                if column.col == []:
+                    column.filled = False
         else:
             if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
                 if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
@@ -641,7 +703,10 @@ def check_click():
     for house in house_list:
         if house.top_rect.collidepoint(posm):
             house.clicked()
-
+    for col in column_list:
+        if len(col.col) == 0:
+            if col.top_rect.collidepoint(posm):
+                col.clicked()
 
 while not gameExit:
 
