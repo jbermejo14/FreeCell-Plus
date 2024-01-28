@@ -44,6 +44,7 @@ class Card:
                 for lista in card_list:
                     if i in lista:
                         lista.remove(i)
+
                         def testttt(num, lista, num2):
                             global append
                             for col in card_list:
@@ -291,7 +292,8 @@ class Card:
                         return i.coords[1]
 
                 for i in card_list:
-                    aux_card_list.append(i)
+                    if i != []:
+                        aux_card_list.append(i)
                 aux_card_list.sort(key=sort_func)
 
                 for i in box_card_list:
@@ -335,7 +337,8 @@ class Boxes:
                             return i.coords[1]
 
                     for i in card_list:
-                        aux_card_list.append(i)
+                        if i != []:
+                            aux_card_list.append(i)
                     aux_card_list.sort(key=sort_func)
 
                     for i in box_card_list:
@@ -381,7 +384,8 @@ class House:
                 return i.coords[1]
 
         for i in card_list:
-            aux_card_list.append(i)
+            if i != []:
+                aux_card_list.append(i)
         aux_card_list.sort(key=sort_func)
 
         for i in box_card_list:
@@ -485,7 +489,6 @@ c5 = [[614.4, 175], [614.4, 210], [614.4, 245], [614.4, 280], [614.4, 315], [614
 c6 = [[716.8, 175], [716.8, 210], [716.8, 245], [716.8, 280], [716.8, 315], [716.8, 350]]
 c7 = [[819.2, 175], [819.2, 210], [819.2, 245], [819.2, 280], [819.2, 315], [819.2, 350]]
 
-
 box_card_list = []
 house_card_list = []
 card_list = [c0, c1, c2, c3, c4, c5, c6, c7]
@@ -502,8 +505,10 @@ def front_row():
     # FIXING THISSSSSSSSS
 
     for i in card_list:
-        if len(i) <= 1:
+        if len(i) == 1:
             front_row_list.append(i[-1])
+        elif len(i) == 0:
+            print("empty")
         else:
             if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
                 if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
@@ -584,7 +589,6 @@ def front_row():
             front_row_list.append(card_in_box)
         i.sort(key=sort_func)
 
-
     return front_row_list
 
 
@@ -611,6 +615,7 @@ aux_card_list = []
 def sort_func(e):
     for i in e:
         return i.coords[1]
+
 
 for i in card_list:
     aux_card_list.append(i)
@@ -640,7 +645,7 @@ def check_click():
 
 while not gameExit:
 
-    if pygame.mouse.get_pressed()[0] is True:
+    if pygame.mouse.get_pressed()[2] is True:
         check_click()
 
     for event in pygame.event.get():
