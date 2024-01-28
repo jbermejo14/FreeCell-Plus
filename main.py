@@ -65,14 +65,16 @@ class Card:
                                                 append = num2
                                                 return card
                                     elif i.color == "black":
-                                        if num == 35 or num == 105 or num == 175 or num == 245 or num == 315:
+                                        if (num == 35 or num == 105 or num == 175 or num == 245 or num == 315
+                                                or num == 385):
                                             if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
                                                     and i.color != card.color and int(i.number) - num2 == int(
                                                         card.number)):
                                                 lista.remove(card)
                                                 append = num2
                                                 return card
-                                        if num == 70 or num == 140 or num == 210 or num == 280:
+                                        if (num == 70 or num == 140 or num == 210 or num == 280 or num == 350
+                                                or num == 420):
                                             if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
                                                     and i.color == card.color and int(i.number) - num2 == int(
                                                         card.number)):
@@ -89,6 +91,9 @@ class Card:
                         aux8 = testttt(245, lista, 7)
                         aux9 = testttt(280, lista, 8)
                         aux10 = testttt(315, lista, 9)
+                        aux11 = testttt(350, lista, 10)
+                        aux12 = testttt(385, lista, 11)
+                        aux13 = testttt(420, lista, 12)
 
                         for lista2 in card_list:
                             if self in lista2:
@@ -285,6 +290,221 @@ class Card:
                                     aux9.coords[0] = aux8.coords[0]
                                     aux9.coords[1] = aux8.coords[1] + 35
                                     aux9.top_rect = pygame.Rect(aux9.coords[0], aux9.coords[1], 102, 155)
+                                if append == 9:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                    lista2.append(aux4)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux4.coords[0] = aux3.coords[0]
+                                    aux4.coords[1] = aux3.coords[1] + 35
+                                    aux4.top_rect = pygame.Rect(aux4.coords[0], aux4.coords[1], 102, 155)
+                                    lista2.append(aux5)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux5.coords[0] = aux4.coords[0]
+                                    aux5.coords[1] = aux4.coords[1] + 35
+                                    aux5.top_rect = pygame.Rect(aux5.coords[0], aux5.coords[1], 102, 155)
+                                    lista2.append(aux6)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux6.coords[0] = aux5.coords[0]
+                                    aux6.coords[1] = aux5.coords[1] + 35
+                                    aux6.top_rect = pygame.Rect(aux6.coords[0], aux6.coords[1], 102, 155)
+                                    lista2.append(aux7)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux7.coords[0] = aux6.coords[0]
+                                    aux7.coords[1] = aux6.coords[1] + 35
+                                    aux7.top_rect = pygame.Rect(aux7.coords[0], aux7.coords[1], 102, 155)
+                                    lista2.append(aux8)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux8.coords[0] = aux7.coords[0]
+                                    aux8.coords[1] = aux7.coords[1] + 35
+                                    aux8.top_rect = pygame.Rect(aux8.coords[0], aux8.coords[1], 102, 155)
+                                    lista2.append(aux9)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux9.coords[0] = aux8.coords[0]
+                                    aux9.coords[1] = aux8.coords[1] + 35
+                                    aux9.top_rect = pygame.Rect(aux9.coords[0], aux9.coords[1], 102, 155)
+                                    lista2.append(aux10)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux10.coords[0] = aux9.coords[0]
+                                    aux10.coords[1] = aux9.coords[1] + 35
+                                    aux10.top_rect = pygame.Rect(aux10.coords[0], aux10.coords[1], 102, 155)
+                                if append == 10:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                    lista2.append(aux4)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux4.coords[0] = aux3.coords[0]
+                                    aux4.coords[1] = aux3.coords[1] + 35
+                                    aux4.top_rect = pygame.Rect(aux4.coords[0], aux4.coords[1], 102, 155)
+                                    lista2.append(aux5)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux5.coords[0] = aux4.coords[0]
+                                    aux5.coords[1] = aux4.coords[1] + 35
+                                    aux5.top_rect = pygame.Rect(aux5.coords[0], aux5.coords[1], 102, 155)
+                                    lista2.append(aux6)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux6.coords[0] = aux5.coords[0]
+                                    aux6.coords[1] = aux5.coords[1] + 35
+                                    aux6.top_rect = pygame.Rect(aux6.coords[0], aux6.coords[1], 102, 155)
+                                    lista2.append(aux7)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux7.coords[0] = aux6.coords[0]
+                                    aux7.coords[1] = aux6.coords[1] + 35
+                                    aux7.top_rect = pygame.Rect(aux7.coords[0], aux7.coords[1], 102, 155)
+                                    lista2.append(aux8)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux8.coords[0] = aux7.coords[0]
+                                    aux8.coords[1] = aux7.coords[1] + 35
+                                    aux8.top_rect = pygame.Rect(aux8.coords[0], aux8.coords[1], 102, 155)
+                                    lista2.append(aux9)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux9.coords[0] = aux8.coords[0]
+                                    aux9.coords[1] = aux8.coords[1] + 35
+                                    aux9.top_rect = pygame.Rect(aux9.coords[0], aux9.coords[1], 102, 155)
+                                    lista2.append(aux10)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux10.coords[0] = aux9.coords[0]
+                                    aux10.coords[1] = aux9.coords[1] + 35
+                                    aux10.top_rect = pygame.Rect(aux10.coords[0], aux10.coords[1], 102, 155)
+                                    lista2.append(aux11)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux11.coords[0] = aux10.coords[0]
+                                    aux11.coords[1] = aux10.coords[1] + 35
+                                    aux11.top_rect = pygame.Rect(aux11.coords[0], aux11.coords[1], 102, 155)
+                                if append == 11:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                    lista2.append(aux4)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux4.coords[0] = aux3.coords[0]
+                                    aux4.coords[1] = aux3.coords[1] + 35
+                                    aux4.top_rect = pygame.Rect(aux4.coords[0], aux4.coords[1], 102, 155)
+                                    lista2.append(aux5)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux5.coords[0] = aux4.coords[0]
+                                    aux5.coords[1] = aux4.coords[1] + 35
+                                    aux5.top_rect = pygame.Rect(aux5.coords[0], aux5.coords[1], 102, 155)
+                                    lista2.append(aux6)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux6.coords[0] = aux5.coords[0]
+                                    aux6.coords[1] = aux5.coords[1] + 35
+                                    aux6.top_rect = pygame.Rect(aux6.coords[0], aux6.coords[1], 102, 155)
+                                    lista2.append(aux7)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux7.coords[0] = aux6.coords[0]
+                                    aux7.coords[1] = aux6.coords[1] + 35
+                                    aux7.top_rect = pygame.Rect(aux7.coords[0], aux7.coords[1], 102, 155)
+                                    lista2.append(aux8)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux8.coords[0] = aux7.coords[0]
+                                    aux8.coords[1] = aux7.coords[1] + 35
+                                    aux8.top_rect = pygame.Rect(aux8.coords[0], aux8.coords[1], 102, 155)
+                                    lista2.append(aux9)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux9.coords[0] = aux8.coords[0]
+                                    aux9.coords[1] = aux8.coords[1] + 35
+                                    aux9.top_rect = pygame.Rect(aux9.coords[0], aux9.coords[1], 102, 155)
+                                    lista2.append(aux10)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux10.coords[0] = aux9.coords[0]
+                                    aux10.coords[1] = aux9.coords[1] + 35
+                                    aux10.top_rect = pygame.Rect(aux10.coords[0], aux10.coords[1], 102, 155)
+                                    lista2.append(aux11)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux11.coords[0] = aux10.coords[0]
+                                    aux11.coords[1] = aux10.coords[1] + 35
+                                    aux11.top_rect = pygame.Rect(aux11.coords[0], aux11.coords[1], 102, 155)
+                                    lista2.append(aux12)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux12.coords[0] = aux11.coords[0]
+                                    aux12.coords[1] = aux11.coords[1] + 35
+                                    aux12.top_rect = pygame.Rect(aux12.coords[0], aux12.coords[1], 102, 155)
+                                if append == 12:
+                                    lista2.append(aux2)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux2.coords[0] = i.coords[0]
+                                    aux2.coords[1] = i.coords[1] + 35
+                                    aux2.top_rect = pygame.Rect(aux2.coords[0], aux2.coords[1], 102, 155)
+                                    lista2.append(aux3)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux3.coords[0] = aux2.coords[0]
+                                    aux3.coords[1] = aux2.coords[1] + 35
+                                    aux3.top_rect = pygame.Rect(aux3.coords[0], aux3.coords[1], 102, 155)
+                                    lista2.append(aux4)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux4.coords[0] = aux3.coords[0]
+                                    aux4.coords[1] = aux3.coords[1] + 35
+                                    aux4.top_rect = pygame.Rect(aux4.coords[0], aux4.coords[1], 102, 155)
+                                    lista2.append(aux5)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux5.coords[0] = aux4.coords[0]
+                                    aux5.coords[1] = aux4.coords[1] + 35
+                                    aux5.top_rect = pygame.Rect(aux5.coords[0], aux5.coords[1], 102, 155)
+                                    lista2.append(aux6)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux6.coords[0] = aux5.coords[0]
+                                    aux6.coords[1] = aux5.coords[1] + 35
+                                    aux6.top_rect = pygame.Rect(aux6.coords[0], aux6.coords[1], 102, 155)
+                                    lista2.append(aux7)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux7.coords[0] = aux6.coords[0]
+                                    aux7.coords[1] = aux6.coords[1] + 35
+                                    aux7.top_rect = pygame.Rect(aux7.coords[0], aux7.coords[1], 102, 155)
+                                    lista2.append(aux8)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux8.coords[0] = aux7.coords[0]
+                                    aux8.coords[1] = aux7.coords[1] + 35
+                                    aux8.top_rect = pygame.Rect(aux8.coords[0], aux8.coords[1], 102, 155)
+                                    lista2.append(aux9)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux9.coords[0] = aux8.coords[0]
+                                    aux9.coords[1] = aux8.coords[1] + 35
+                                    aux9.top_rect = pygame.Rect(aux9.coords[0], aux9.coords[1], 102, 155)
+                                    lista2.append(aux10)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux10.coords[0] = aux9.coords[0]
+                                    aux10.coords[1] = aux9.coords[1] + 35
+                                    aux10.top_rect = pygame.Rect(aux10.coords[0], aux10.coords[1], 102, 155)
+                                    lista2.append(aux11)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux11.coords[0] = aux10.coords[0]
+                                    aux11.coords[1] = aux10.coords[1] + 35
+                                    aux11.top_rect = pygame.Rect(aux11.coords[0], aux11.coords[1], 102, 155)
+                                    lista2.append(aux12)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux12.coords[0] = aux11.coords[0]
+                                    aux12.coords[1] = aux11.coords[1] + 35
+                                    aux12.top_rect = pygame.Rect(aux12.coords[0], aux12.coords[1], 102, 155)
+                                    lista2.append(aux13)
+                                    gameDisplay.blit(table, (0, 0))
+                                    aux13.coords[0] = aux12.coords[0]
+                                    aux13.coords[1] = aux12.coords[1] + 35
+                                    aux13.top_rect = pygame.Rect(aux13.coords[0], aux13.coords[1], 102, 155)
+
                 aux_card_list = []
 
                 def sort_func(e):
@@ -541,7 +761,6 @@ card_list = [c0, c1, c2, c3, c4, c5, c6, c7]
 box_list = [Box1, Box2, Box3, Box4]
 house_list = [House1, House2, House3, House4]
 
-
 Column1 = Column([102.4, 175], c0)
 Column2 = Column([204.8, 175], c1)
 Column3 = Column([307.2, 175], c2)
@@ -552,6 +771,7 @@ Column7 = Column([716.8, 175], c6)
 Column8 = Column([819.2, 175], c7)
 
 column_list = [Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8]
+
 
 def front_row():
     front_row_list = []
@@ -707,6 +927,7 @@ def check_click():
         if len(col.col) == 0:
             if col.top_rect.collidepoint(posm):
                 col.clicked()
+
 
 while not gameExit:
 
