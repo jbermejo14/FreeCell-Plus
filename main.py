@@ -597,11 +597,10 @@ class Column:
                                 for col in card_list:
                                     for card in col:
                                         if i.color == "red":
-                                            print("1")
                                             if (num == 35 or num == 105 or num == 175 or num == 245 or num == 315
                                                     or num == 420):
-                                                print("2")
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color != card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
@@ -610,8 +609,8 @@ class Column:
                                                     return card
                                             if (num == 70 or num == 140 or num == 210 or num == 280 or num == 350
                                                     or num == 420):
-                                                print("2", i.coords, card.coords)
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color == card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
@@ -619,22 +618,22 @@ class Column:
                                                     print(card)
                                                     return card
                                         elif i.color == "black":
-                                            print("1")
-                                            if (num == 35 or num == 105 or num == 175 or num == 245 or num == 315 or num == 350
+                                            if (
+                                                    num == 35 or num == 105 or num == 175 or num == 245 or num == 315 or num == 350
                                                     or num == 420):
-                                                print("2", i.coords, card.coords)
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color != card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
-                                                    append = num2
+                                                    append = num2 
                                                     print(card)
                                                     return card
 
                                             if (num == 70 or num == 140 or num == 210 or num == 280 or num == 350
                                                     or num == 420):
-                                                print("2", i.coords, card.coords)
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color == card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
@@ -1063,7 +1062,6 @@ class Column:
                                 aux13.coords[1] = aux12.coords[1] + 35
                                 aux13.top_rect = pygame.Rect(aux13.coords[0], aux13.coords[1], 102, 155)
 
-
                     aux_card_list = []
 
                     def sort_func(e):
@@ -1248,16 +1246,149 @@ def front_row():
     def sort_func(e):
         return e.coords[1]
 
-    # FIXING THISSSSSSSSS
-
+    # THIS NEEDS FIXINGGGG (+3 card stack fails)
+    for card_in_box in box_card_list:
+        front_row_list.append(card_in_box)
     for i in card_list:
-        if len(i) == 1:
-            front_row_list.append(i[-1])
-        elif len(i) == 0:
+        print(len(i))
+        if len(i) == 0:
             for column in column_list:
                 if column.col == []:
                     column.filled = False
-        else:
+        elif len(i) == 1:
+            front_row_list.append(i[-1])
+        elif len(i) == 2:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                front_row_list.append(i[-1])
+                front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 3:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+                    front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 4:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                        front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 5:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                            front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 6:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                                front_row_list.append(i[-6])
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 7:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                                if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
+                                    front_row_list.append(i[-1])
+                                    front_row_list.append(i[-2])
+                                    front_row_list.append(i[-3])
+                                    front_row_list.append(i[-4])
+                                    front_row_list.append(i[-5])
+                                    front_row_list.append(i[-6])
+                                    front_row_list.append(i[-7])
+                                else:
+                                    front_row_list.append(i[-1])
+                                    front_row_list.append(i[-2])
+                                    front_row_list.append(i[-3])
+                                    front_row_list.append(i[-4])
+                                    front_row_list.append(i[-5])
+                                    front_row_list.append(i[-6])
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 8:
             if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
                 if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
                     if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
@@ -1265,38 +1396,14 @@ def front_row():
                             if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
                                 if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
                                     if i[-7].color != i[-8].color and int(i[-7].number) == int(i[-8].number) - 1:
-                                        if i[-8].color != i[-9].color and int(i[-8].number) == int(i[-9].number) - 1:
-                                            if i[-9].color != i[-10].color and int(i[-9].number) == int(
-                                                    i[-10].number) - 1:
-                                                front_row_list.append(i[-1])
-                                                front_row_list.append(i[-2])
-                                                front_row_list.append(i[-3])
-                                                front_row_list.append(i[-4])
-                                                front_row_list.append(i[-5])
-                                                front_row_list.append(i[-6])
-                                                front_row_list.append(i[-7])
-                                                front_row_list.append(i[-8])
-                                                front_row_list.append(i[-9])
-                                                front_row_list.append(i[-10])
-                                            else:
-                                                front_row_list.append(i[-1])
-                                                front_row_list.append(i[-2])
-                                                front_row_list.append(i[-3])
-                                                front_row_list.append(i[-4])
-                                                front_row_list.append(i[-5])
-                                                front_row_list.append(i[-6])
-                                                front_row_list.append(i[-7])
-                                                front_row_list.append(i[-8])
-                                                front_row_list.append(i[-9])
-                                        else:
-                                            front_row_list.append(i[-1])
-                                            front_row_list.append(i[-2])
-                                            front_row_list.append(i[-3])
-                                            front_row_list.append(i[-4])
-                                            front_row_list.append(i[-5])
-                                            front_row_list.append(i[-6])
-                                            front_row_list.append(i[-7])
-                                            front_row_list.append(i[-8])
+                                        front_row_list.append(i[-1])
+                                        front_row_list.append(i[-2])
+                                        front_row_list.append(i[-3])
+                                        front_row_list.append(i[-4])
+                                        front_row_list.append(i[-5])
+                                        front_row_list.append(i[-6])
+                                        front_row_list.append(i[-7])
+                                        front_row_list.append(i[-8])
                                     else:
                                         front_row_list.append(i[-1])
                                         front_row_list.append(i[-2])
@@ -1332,11 +1439,12 @@ def front_row():
                     front_row_list.append(i[-2])
             else:
                 front_row_list.append(i[-1])
+        for c in front_row_list:
+            print(c.name)
+        print(len(front_row_list))
+        print("")
 
-        for card_in_box in box_card_list:
-            front_row_list.append(card_in_box)
         i.sort(key=sort_func)
-
     return front_row_list
 
 
@@ -1379,12 +1487,12 @@ pygame.display.update()
 def check_click():
     global front_row_list
     posm = pygame.mouse.get_pos()
+    front_row_list = front_row()
     for box in box_list:
         if box.top_rect.collidepoint(posm):
             box.clicked()
     for i in front_row_list:
         if i.top_rect.collidepoint(posm):
-            front_row_list = front_row()
             i.clicked()
     for house in house_list:
         if house.top_rect.collidepoint(posm):
@@ -1397,7 +1505,7 @@ def check_click():
 
 while not gameExit:
 
-    if pygame.mouse.get_pressed()[2] is True:
+    if pygame.mouse.get_pressed()[0] is True:
         check_click()
 
     for event in pygame.event.get():
@@ -1405,4 +1513,6 @@ while not gameExit:
             pygame.quit()
             sys.exit()
 
+
 # Boxes can't hold a card after a card has been inside
+# Sometimes cards don't go home
