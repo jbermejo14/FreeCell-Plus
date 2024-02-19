@@ -20,9 +20,9 @@ class Card:
         self.selected = False
         self.card = pygame.image.load('resources/card_images/' + self.name + ".png")
         self.in_box = False
-        if self.suit is "Hearts" or self.suit is "Diamonds":
+        if self.suit == "Hearts" or self.suit == "Diamonds":
             self.color = "red"
-        elif self.suit is "Spades" or self.suit is "Claves":
+        elif self.suit == "Spades" or self.suit == "Claves":
             self.color = "black"
 
     def clicked(self):
@@ -32,6 +32,9 @@ class Card:
                 append = 0
                 if i in box_card_list:
                     box_card_list.remove(i)
+                    for box in box_list:
+                        if box.card_inside == i:
+                            box.card_inside = None
                     i.in_box = False
                     for lista2 in card_list:
                         if self in lista2:
@@ -535,43 +538,45 @@ class Card:
 class Boxes:
     def __init__(self, coords):
         self.coords = coords
-        self.filled = False
         self.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
+        self.card_inside = None
 
     def clicked(self):
         for i in front_row_list:
-            if i.selected is True:
-                if self.filled is False:
-                    i.coords = self.coords
-                    gameDisplay.blit(table, (0, 0))
-                    i.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
-                    i.in_box = True
-                    for list in card_list:
-                        if i in list:
-                            list.remove(i)
-                            box_card_list.append(i)
-                    aux_card_list = []
+            if i.selected is True and self.card_inside == None:
+                i.coords = self.coords
+                gameDisplay.blit(table, (0, 0))
+                i.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
+                i.in_box = True
+                for box in box_list:
+                    if box.coords == i.coords:
+                        box.card_inside = i
+                for list in card_list:
+                    if i in list:
+                        list.remove(i)
+                        box_card_list.append(i)
+                aux_card_list = []
 
-                    def sort_func(e):
-                        for i in e:
-                            return i.coords[1]
+                def sort_func(e):
+                    for i in e:
+                        return i.coords[1]
 
-                    for i in card_list:
-                        if i != []:
-                            aux_card_list.append(i)
-                    aux_card_list.sort(key=sort_func)
+                for i in card_list:
+                    if i != []:
+                        aux_card_list.append(i)
+                aux_card_list.sort(key=sort_func)
 
-                    for i in box_card_list:
-                        gameDisplay.blit(i.card, (i.coords[0], i.coords[1], 102, 155))
+                for i in box_card_list:
+                    gameDisplay.blit(i.card, (i.coords[0], i.coords[1], 102, 155))
 
-                    for i in house_card_list:
-                        gameDisplay.blit(i.card, (i.coords[0], i.coords[1], 102, 155))
+                for i in house_card_list:
+                    gameDisplay.blit(i.card, (i.coords[0], i.coords[1], 102, 155))
 
-                    for i in aux_card_list:
-                        for c in i:
-                            gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
-                    pygame.display.update()
-                    self.filled = True
+                for i in aux_card_list:
+                    for c in i:
+                        gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
+                pygame.display.update()
+                self.filled = True
         for i in front_row_list:
             i.selected = False
 
@@ -1249,7 +1254,6 @@ def front_row():
     for card_in_box in box_card_list:
         front_row_list.append(card_in_box)
     for i in card_list:
-        print(len(i))
         if len(i) == 0:
             for column in column_list:
                 if column.col == []:
@@ -1888,14 +1892,9 @@ def front_row():
                     front_row_list.append(i[-2])
             else:
                 front_row_list.append(i[-1])
-        for c in front_row_list:
-            print(c.name)
-        print(len(front_row_list))
-        print("")
 
         i.sort(key=sort_func)
     return front_row_list
-
 
 for i in range(52):
     for card in card_list_init:
@@ -1931,7 +1930,6 @@ for i in aux_card_list:
         gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
 
 pygame.display.update()
-
 
 def check_click():
     global front_row_list
