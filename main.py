@@ -2,13 +2,31 @@ import random
 import pygame
 import sys
 
+black = pygame.Color(0, 0, 0)
 gameDisplay = pygame.display.set_mode((1024, 700))
 pygame.init()
 pygame.display.set_caption("CartaBlanca")
 gameExit = False
+end = False
 table = pygame.image.load("resources/table.png")
 gameDisplay.blit(table, (0, 0))
 
+
+font = pygame.font.SysFont(None, 30)
+img = font.render('Bienvenido a Carta Blanca!', True, black)
+gameDisplay.blit(img, (400, 250))
+pygame.display.update()
+
+# INIT MENU
+# NEEDS ADDING LOOOOTS OF STUFF
+while not end:
+
+
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
 
 class Card:
     def __init__(self, suit, number):
@@ -1948,6 +1966,7 @@ def check_click():
         if len(col.col) == 0:
             if col.top_rect.collidepoint(posm):
                 col.clicked()
+
 
 
 while not gameExit:
