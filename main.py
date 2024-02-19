@@ -1438,6 +1438,456 @@ def front_row():
                     front_row_list.append(i[-2])
             else:
                 front_row_list.append(i[-1])
+        elif len(i) == 9:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                                if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
+                                    if i[-7].color != i[-8].color and int(i[-7].number) == int(i[-8].number) - 1:
+                                        if i[-8].color != i[-9].color and int(i[-8].number) == int(i[-9].number) - 1:
+                                            front_row_list.append(i[-1])
+                                            front_row_list.append(i[-2])
+                                            front_row_list.append(i[-3])
+                                            front_row_list.append(i[-4])
+                                            front_row_list.append(i[-5])
+                                            front_row_list.append(i[-6])
+                                            front_row_list.append(i[-7])
+                                            front_row_list.append(i[-8])
+                                            front_row_list.append(i[-9])
+                                        else:
+                                            front_row_list.append(i[-1])
+                                            front_row_list.append(i[-2])
+                                            front_row_list.append(i[-3])
+                                            front_row_list.append(i[-4])
+                                            front_row_list.append(i[-5])
+                                            front_row_list.append(i[-6])
+                                            front_row_list.append(i[-7])
+                                            front_row_list.append(i[-8])
+                                    else:
+                                        front_row_list.append(i[-1])
+                                        front_row_list.append(i[-2])
+                                        front_row_list.append(i[-3])
+                                        front_row_list.append(i[-4])
+                                        front_row_list.append(i[-5])
+                                        front_row_list.append(i[-6])
+                                        front_row_list.append(i[-7])
+                                else:
+                                    front_row_list.append(i[-1])
+                                    front_row_list.append(i[-2])
+                                    front_row_list.append(i[-3])
+                                    front_row_list.append(i[-4])
+                                    front_row_list.append(i[-5])
+                                    front_row_list.append(i[-6])
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 10:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                                if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
+                                    if i[-7].color != i[-8].color and int(i[-7].number) == int(i[-8].number) - 1:
+                                        if i[-8].color != i[-9].color and int(i[-8].number) == int(i[-9].number) - 1:
+                                            if i[-9].color != i[-10].color and int(i[-9].number) == int(
+                                                    i[-10].number) - 1:
+                                                front_row_list.append(i[-1])
+                                                front_row_list.append(i[-2])
+                                                front_row_list.append(i[-3])
+                                                front_row_list.append(i[-4])
+                                                front_row_list.append(i[-5])
+                                                front_row_list.append(i[-6])
+                                                front_row_list.append(i[-7])
+                                                front_row_list.append(i[-8])
+                                                front_row_list.append(i[-9])
+                                                front_row_list.append(i[-10])
+                                            else:
+                                                front_row_list.append(i[-1])
+                                                front_row_list.append(i[-2])
+                                                front_row_list.append(i[-3])
+                                                front_row_list.append(i[-4])
+                                                front_row_list.append(i[-5])
+                                                front_row_list.append(i[-6])
+                                                front_row_list.append(i[-7])
+                                                front_row_list.append(i[-8])
+                                                front_row_list.append(i[-9])
+                                        else:
+                                            front_row_list.append(i[-1])
+                                            front_row_list.append(i[-2])
+                                            front_row_list.append(i[-3])
+                                            front_row_list.append(i[-4])
+                                            front_row_list.append(i[-5])
+                                            front_row_list.append(i[-6])
+                                            front_row_list.append(i[-7])
+                                            front_row_list.append(i[-8])
+                                    else:
+                                        front_row_list.append(i[-1])
+                                        front_row_list.append(i[-2])
+                                        front_row_list.append(i[-3])
+                                        front_row_list.append(i[-4])
+                                        front_row_list.append(i[-5])
+                                        front_row_list.append(i[-6])
+                                        front_row_list.append(i[-7])
+                                else:
+                                    front_row_list.append(i[-1])
+                                    front_row_list.append(i[-2])
+                                    front_row_list.append(i[-3])
+                                    front_row_list.append(i[-4])
+                                    front_row_list.append(i[-5])
+                                    front_row_list.append(i[-6])
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 11:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                                if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
+                                    if i[-7].color != i[-8].color and int(i[-7].number) == int(i[-8].number) - 1:
+                                        if i[-8].color != i[-9].color and int(i[-8].number) == int(i[-9].number) - 1:
+                                            if i[-9].color != i[-10].color and int(i[-9].number) == int(
+                                                    i[-10].number) - 1:
+                                                if i[-10].color != i[-11].color and int(i[-10].number) == int(
+                                                        i[-11].number) - 1:
+                                                    front_row_list.append(i[-1])
+                                                    front_row_list.append(i[-2])
+                                                    front_row_list.append(i[-3])
+                                                    front_row_list.append(i[-4])
+                                                    front_row_list.append(i[-5])
+                                                    front_row_list.append(i[-6])
+                                                    front_row_list.append(i[-7])
+                                                    front_row_list.append(i[-8])
+                                                    front_row_list.append(i[-9])
+                                                    front_row_list.append(i[-10])
+                                                    front_row_list.append(i[-11])
+                                                else:
+                                                    front_row_list.append(i[-1])
+                                                    front_row_list.append(i[-2])
+                                                    front_row_list.append(i[-3])
+                                                    front_row_list.append(i[-4])
+                                                    front_row_list.append(i[-5])
+                                                    front_row_list.append(i[-6])
+                                                    front_row_list.append(i[-7])
+                                                    front_row_list.append(i[-8])
+                                                    front_row_list.append(i[-9])
+                                                    front_row_list.append(i[-10])
+                                            else:
+                                                front_row_list.append(i[-1])
+                                                front_row_list.append(i[-2])
+                                                front_row_list.append(i[-3])
+                                                front_row_list.append(i[-4])
+                                                front_row_list.append(i[-5])
+                                                front_row_list.append(i[-6])
+                                                front_row_list.append(i[-7])
+                                                front_row_list.append(i[-8])
+                                                front_row_list.append(i[-9])
+                                        else:
+                                            front_row_list.append(i[-1])
+                                            front_row_list.append(i[-2])
+                                            front_row_list.append(i[-3])
+                                            front_row_list.append(i[-4])
+                                            front_row_list.append(i[-5])
+                                            front_row_list.append(i[-6])
+                                            front_row_list.append(i[-7])
+                                            front_row_list.append(i[-8])
+                                    else:
+                                        front_row_list.append(i[-1])
+                                        front_row_list.append(i[-2])
+                                        front_row_list.append(i[-3])
+                                        front_row_list.append(i[-4])
+                                        front_row_list.append(i[-5])
+                                        front_row_list.append(i[-6])
+                                        front_row_list.append(i[-7])
+                                else:
+                                    front_row_list.append(i[-1])
+                                    front_row_list.append(i[-2])
+                                    front_row_list.append(i[-3])
+                                    front_row_list.append(i[-4])
+                                    front_row_list.append(i[-5])
+                                    front_row_list.append(i[-6])
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 12:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                                if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
+                                    if i[-7].color != i[-8].color and int(i[-7].number) == int(i[-8].number) - 1:
+                                        if i[-8].color != i[-9].color and int(i[-8].number) == int(i[-9].number) - 1:
+                                            if i[-9].color != i[-10].color and int(i[-9].number) == int(
+                                                    i[-10].number) - 1:
+                                                if i[-10].color != i[-11].color and int(i[-10].number) == int(
+                                                        i[-11].number) - 1:
+                                                    if i[-11].color != i[-12].color and int(i[-11].number) == int(
+                                                            i[-12].number) - 1:
+                                                        front_row_list.append(i[-1])
+                                                        front_row_list.append(i[-2])
+                                                        front_row_list.append(i[-3])
+                                                        front_row_list.append(i[-4])
+                                                        front_row_list.append(i[-5])
+                                                        front_row_list.append(i[-6])
+                                                        front_row_list.append(i[-7])
+                                                        front_row_list.append(i[-8])
+                                                        front_row_list.append(i[-9])
+                                                        front_row_list.append(i[-10])
+                                                        front_row_list.append(i[-11])
+                                                        front_row_list.append(i[-12])
+                                                    else:
+                                                        front_row_list.append(i[-1])
+                                                        front_row_list.append(i[-2])
+                                                        front_row_list.append(i[-3])
+                                                        front_row_list.append(i[-4])
+                                                        front_row_list.append(i[-5])
+                                                        front_row_list.append(i[-6])
+                                                        front_row_list.append(i[-7])
+                                                        front_row_list.append(i[-8])
+                                                        front_row_list.append(i[-9])
+                                                        front_row_list.append(i[-10])
+                                                        front_row_list.append(i[-11])
+                                                else:
+                                                    front_row_list.append(i[-1])
+                                                    front_row_list.append(i[-2])
+                                                    front_row_list.append(i[-3])
+                                                    front_row_list.append(i[-4])
+                                                    front_row_list.append(i[-5])
+                                                    front_row_list.append(i[-6])
+                                                    front_row_list.append(i[-7])
+                                                    front_row_list.append(i[-8])
+                                                    front_row_list.append(i[-9])
+                                                    front_row_list.append(i[-10])
+                                            else:
+                                                front_row_list.append(i[-1])
+                                                front_row_list.append(i[-2])
+                                                front_row_list.append(i[-3])
+                                                front_row_list.append(i[-4])
+                                                front_row_list.append(i[-5])
+                                                front_row_list.append(i[-6])
+                                                front_row_list.append(i[-7])
+                                                front_row_list.append(i[-8])
+                                                front_row_list.append(i[-9])
+                                        else:
+                                            front_row_list.append(i[-1])
+                                            front_row_list.append(i[-2])
+                                            front_row_list.append(i[-3])
+                                            front_row_list.append(i[-4])
+                                            front_row_list.append(i[-5])
+                                            front_row_list.append(i[-6])
+                                            front_row_list.append(i[-7])
+                                            front_row_list.append(i[-8])
+                                    else:
+                                        front_row_list.append(i[-1])
+                                        front_row_list.append(i[-2])
+                                        front_row_list.append(i[-3])
+                                        front_row_list.append(i[-4])
+                                        front_row_list.append(i[-5])
+                                        front_row_list.append(i[-6])
+                                        front_row_list.append(i[-7])
+                                else:
+                                    front_row_list.append(i[-1])
+                                    front_row_list.append(i[-2])
+                                    front_row_list.append(i[-3])
+                                    front_row_list.append(i[-4])
+                                    front_row_list.append(i[-5])
+                                    front_row_list.append(i[-6])
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
+        elif len(i) == 13:
+            if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
+                if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
+                    if i[-3].color != i[-4].color and int(i[-3].number) == int(i[-4].number) - 1:
+                        if i[-4].color != i[-5].color and int(i[-4].number) == int(i[-5].number) - 1:
+                            if i[-5].color != i[-6].color and int(i[-5].number) == int(i[-6].number) - 1:
+                                if i[-6].color != i[-7].color and int(i[-6].number) == int(i[-7].number) - 1:
+                                    if i[-7].color != i[-8].color and int(i[-7].number) == int(i[-8].number) - 1:
+                                        if i[-8].color != i[-9].color and int(i[-8].number) == int(i[-9].number) - 1:
+                                            if i[-9].color != i[-10].color and int(i[-9].number) == int(
+                                                    i[-10].number) - 1:
+                                                if i[-10].color != i[-11].color and int(i[-10].number) == int(
+                                                        i[-11].number) - 1:
+                                                    if i[-11].color != i[-12].color and int(i[-11].number) == int(
+                                                            i[-12].number) - 1:
+                                                        if i[-12].color != i[-13].color and int(i[-12].number) == int(
+                                                                i[-13].number) - 1:
+                                                            front_row_list.append(i[-1])
+                                                            front_row_list.append(i[-2])
+                                                            front_row_list.append(i[-3])
+                                                            front_row_list.append(i[-4])
+                                                            front_row_list.append(i[-5])
+                                                            front_row_list.append(i[-6])
+                                                            front_row_list.append(i[-7])
+                                                            front_row_list.append(i[-8])
+                                                            front_row_list.append(i[-9])
+                                                            front_row_list.append(i[-10])
+                                                            front_row_list.append(i[-11])
+                                                            front_row_list.append(i[-12])
+                                                            front_row_list.append(i[-13])
+                                                        else:
+                                                            front_row_list.append(i[-1])
+                                                            front_row_list.append(i[-2])
+                                                            front_row_list.append(i[-3])
+                                                            front_row_list.append(i[-4])
+                                                            front_row_list.append(i[-5])
+                                                            front_row_list.append(i[-6])
+                                                            front_row_list.append(i[-7])
+                                                            front_row_list.append(i[-8])
+                                                            front_row_list.append(i[-9])
+                                                            front_row_list.append(i[-10])
+                                                            front_row_list.append(i[-11])
+                                                            front_row_list.append(i[-12])
+                                                    else:
+                                                        front_row_list.append(i[-1])
+                                                        front_row_list.append(i[-2])
+                                                        front_row_list.append(i[-3])
+                                                        front_row_list.append(i[-4])
+                                                        front_row_list.append(i[-5])
+                                                        front_row_list.append(i[-6])
+                                                        front_row_list.append(i[-7])
+                                                        front_row_list.append(i[-8])
+                                                        front_row_list.append(i[-9])
+                                                        front_row_list.append(i[-10])
+                                                        front_row_list.append(i[-11])
+                                                else:
+                                                    front_row_list.append(i[-1])
+                                                    front_row_list.append(i[-2])
+                                                    front_row_list.append(i[-3])
+                                                    front_row_list.append(i[-4])
+                                                    front_row_list.append(i[-5])
+                                                    front_row_list.append(i[-6])
+                                                    front_row_list.append(i[-7])
+                                                    front_row_list.append(i[-8])
+                                                    front_row_list.append(i[-9])
+                                                    front_row_list.append(i[-10])
+                                            else:
+                                                front_row_list.append(i[-1])
+                                                front_row_list.append(i[-2])
+                                                front_row_list.append(i[-3])
+                                                front_row_list.append(i[-4])
+                                                front_row_list.append(i[-5])
+                                                front_row_list.append(i[-6])
+                                                front_row_list.append(i[-7])
+                                                front_row_list.append(i[-8])
+                                                front_row_list.append(i[-9])
+                                        else:
+                                            front_row_list.append(i[-1])
+                                            front_row_list.append(i[-2])
+                                            front_row_list.append(i[-3])
+                                            front_row_list.append(i[-4])
+                                            front_row_list.append(i[-5])
+                                            front_row_list.append(i[-6])
+                                            front_row_list.append(i[-7])
+                                            front_row_list.append(i[-8])
+                                    else:
+                                        front_row_list.append(i[-1])
+                                        front_row_list.append(i[-2])
+                                        front_row_list.append(i[-3])
+                                        front_row_list.append(i[-4])
+                                        front_row_list.append(i[-5])
+                                        front_row_list.append(i[-6])
+                                        front_row_list.append(i[-7])
+                                else:
+                                    front_row_list.append(i[-1])
+                                    front_row_list.append(i[-2])
+                                    front_row_list.append(i[-3])
+                                    front_row_list.append(i[-4])
+                                    front_row_list.append(i[-5])
+                                    front_row_list.append(i[-6])
+                            else:
+                                front_row_list.append(i[-1])
+                                front_row_list.append(i[-2])
+                                front_row_list.append(i[-3])
+                                front_row_list.append(i[-4])
+                                front_row_list.append(i[-5])
+                        else:
+                            front_row_list.append(i[-1])
+                            front_row_list.append(i[-2])
+                            front_row_list.append(i[-3])
+                            front_row_list.append(i[-4])
+                    else:
+                        front_row_list.append(i[-1])
+                        front_row_list.append(i[-2])
+                        front_row_list.append(i[-3])
+                else:
+                    front_row_list.append(i[-1])
+                    front_row_list.append(i[-2])
+            else:
+                front_row_list.append(i[-1])
         for c in front_row_list:
             print(c.name)
         print(len(front_row_list))
