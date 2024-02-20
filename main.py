@@ -1,9 +1,13 @@
 import random
 import pygame
 import sys
+import menu
 
 black = pygame.Color(0, 0, 0)
+white = pygame.Color(0, 0, 255)
 gameDisplay = pygame.display.set_mode((1024, 700))
+width = gameDisplay.get_width()
+height = gameDisplay.get_height()
 pygame.init()
 pygame.display.set_caption("CartaBlanca")
 gameExit = False
@@ -11,22 +15,9 @@ end = False
 table = pygame.image.load("resources/table.png")
 gameDisplay.blit(table, (0, 0))
 
+#FINISH CARD STYLE
+card_style = menu.card_style
 
-font = pygame.font.SysFont(None, 30)
-img = font.render('Bienvenido a Carta Blanca!', True, black)
-gameDisplay.blit(img, (400, 250))
-pygame.display.update()
-
-# INIT MENU
-# NEEDS ADDING LOOOOTS OF STUFF
-while not end:
-
-
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
 
 class Card:
     def __init__(self, suit, number):
@@ -36,7 +27,7 @@ class Card:
         self.top_rect = pygame.Rect(self.coords[0], self.coords[1], 102, 155)
         self.name = number + "-" + suit
         self.selected = False
-        self.card = pygame.image.load('resources/card_images/' + self.name + ".png")
+        self.card = pygame.image.load(card_style + self.name + ".png")
         self.in_box = False
         if self.suit == "Hearts" or self.suit == "Diamonds":
             self.color = "red"
