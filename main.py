@@ -15,6 +15,7 @@ gameDisplay.blit(table, (0, 0))
 #FINISH CARD STYLE
 card_style = menu.card_style
 
+
 class Card:
     def __init__(self, suit, number):
         self.suit = suit
