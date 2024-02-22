@@ -8,7 +8,7 @@ gameDisplay = pygame.display.set_mode((1024, 700))
 
 pygame.init()
 pygame.display.set_caption("CartaBlanca")
-card_style = 'resources/card_images/'
+card_style = 'resources/card_images2/'
 end = False
 end2 = False
 table = pygame.image.load("resources/table.png")
@@ -159,6 +159,7 @@ def menu_page(gameDisplay):
             gameDisplay.blit(button3_img, (button3.coords[0], button3.coords[1], 275, 62))
 
             pygame.display.update()
+
         elif button2.top_rect.collidepoint(posm):
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
@@ -173,6 +174,7 @@ def menu_page(gameDisplay):
             gameDisplay.blit(button3_img, (button3.coords[0], button3.coords[1], 275, 62))
 
             pygame.display.update()
+
         else:
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
