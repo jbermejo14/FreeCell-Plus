@@ -16,7 +16,7 @@ gameDisplay.blit(table, (0, 0))
 
 button1_img = pygame.image.load("resources/button1.png")
 button2_img = pygame.image.load("resources/button2.png")
-button3_img = pygame.image.load("resources/button2.png")
+button3_img = pygame.image.load("resources/button3.png")
 button4_img = pygame.image.load("resources/button4.png")
 button5_img = pygame.image.load("resources/button5.png")
 button6_img = pygame.image.load("resources/button6.png")
@@ -134,6 +134,7 @@ def menu_page(gameDisplay):
     img = font.render('Bienvenido a Carta Blanca!', True, black)
     gameDisplay.blit(img, (300, 225))
 
+
     button1 = InitButtons([374.5, 300], [275, 62])
     gameDisplay.blit(button1_img, (button1.coords[0], button1.coords[1], 275, 62))
 
@@ -142,6 +143,8 @@ def menu_page(gameDisplay):
 
     button3 = InitButtons([374.5, 450], [275, 62])
     gameDisplay.blit(button3_img, (button3.coords[0], button3.coords[1], 275, 62))
+
+    pygame.display.update()
 
     while not end:
         posm = pygame.mouse.get_pos()
