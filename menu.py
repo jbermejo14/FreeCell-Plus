@@ -11,8 +11,6 @@ pygame.display.set_caption("CartaBlanca")
 card_style = 'resources/card_images2/'
 end = False
 end2 = False
-table = pygame.image.load("resources/table.png")
-gameDisplay.blit(table, (0, 0))
 
 button1_img = pygame.image.load("resources/button1.png")
 button2_img = pygame.image.load("resources/button2.png")
@@ -32,29 +30,20 @@ class InitButtons():
 def personalation_menu(gameDisplay):
     global card_style, button6_img, button4_img, button5_img
 
-    table = pygame.image.load("resources/table.png")
-    font = pygame.font.SysFont(None, 50)
-    img = font.render('Elige tu estilo de carta', True, black)
-
-    gameDisplay.blit(table, (0, 0))
-    gameDisplay.blit(img, (350, 225))
-
     button4 = InitButtons([212, 300], [300, 200])
-    gameDisplay.blit(button4_img, (button4.coords[0], button4.coords[1], 300, 200))
-
     button5 = InitButtons([624, 310], [300, 200])
-    gameDisplay.blit(button5_img, (button5.coords[0], button5.coords[1], 300, 200))
-
     button6 = InitButtons([25, 625], [200, 45])
-    gameDisplay.blit(button6_img, (button6.coords[0], button6.coords[1], 200, 45))
-
-    pygame.display.update()
 
     while not end:
         posm = pygame.mouse.get_pos()
         if button6.top_rect.collidepoint(posm):
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
+
+            font = pygame.font.SysFont(None, 50)
+            img = font.render('Elige tu estilo de carta', True, black)
+            gameDisplay.blit(img, (350, 225))
+
             button6 = InitButtons([20, 625], [200, 45])
             button6_img = pygame.image.load("resources/button6-2.png")
             gameDisplay.blit(button6_img, (button6.coords[0], button6.coords[1], 200, 45))
@@ -67,6 +56,10 @@ def personalation_menu(gameDisplay):
         elif button4.top_rect.collidepoint(posm):
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
+
+            font = pygame.font.SysFont(None, 50)
+            img = font.render('Elige tu estilo de carta', True, black)
+            gameDisplay.blit(img, (350, 225))
 
             button4_img = pygame.image.load("resources/button4-2.png")
             button4 = InitButtons([205, 250], [300, 200])
@@ -81,6 +74,10 @@ def personalation_menu(gameDisplay):
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
 
+            font = pygame.font.SysFont(None, 50)
+            img = font.render('Elige tu estilo de carta', True, black)
+            gameDisplay.blit(img, (350, 225))
+
             button5_img = pygame.image.load("resources/button5-2.png")
             button5 = InitButtons([617, 260], [300, 200])
             gameDisplay.blit(button5_img, (button5.coords[0], button5.coords[1], 300, 200))
@@ -94,6 +91,10 @@ def personalation_menu(gameDisplay):
         else:
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
+
+            font = pygame.font.SysFont(None, 50)
+            img = font.render('Elige tu estilo de carta', True, black)
+            gameDisplay.blit(img, (350, 225))
 
             button4 = InitButtons([212, 250], [300, 200])
             button4_img = pygame.image.load("resources/button4.png")
@@ -112,10 +113,8 @@ def personalation_menu(gameDisplay):
             posm = pygame.mouse.get_pos()
             if button4.top_rect.collidepoint(posm):
                 card_style = 'resources/card_images/'
-                print("4")
             elif button5.top_rect.collidepoint(posm):
                 card_style = 'resources/card_images2/'
-                print("5")
             elif button6.top_rect.collidepoint(posm):
                 menu_page(gameDisplay)
 
@@ -128,29 +127,19 @@ def personalation_menu(gameDisplay):
 
 def menu_page(gameDisplay):
     global button1_img, button2_img
-    table = pygame.image.load("resources/table.png")
-    gameDisplay.blit(table, (0, 0))
-    font = pygame.font.SysFont(None, 50)
-    img = font.render('Bienvenido a Carta Blanca!', True, black)
-    gameDisplay.blit(img, (300, 225))
-
-
     button1 = InitButtons([374.5, 300], [275, 62])
-    gameDisplay.blit(button1_img, (button1.coords[0], button1.coords[1], 275, 62))
-
     button2 = InitButtons([374.5, 375], [275, 62])
-    gameDisplay.blit(button2_img, (button2.coords[0], button2.coords[1], 275, 62))
-
     button3 = InitButtons([374.5, 450], [275, 62])
-    gameDisplay.blit(button3_img, (button3.coords[0], button3.coords[1], 275, 62))
-
-    pygame.display.update()
 
     while not end:
         posm = pygame.mouse.get_pos()
         if button1.top_rect.collidepoint(posm):
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
+
+            font = pygame.font.SysFont(None, 50)
+            img = font.render('Bienvenido a Carta Blanca!', True, black)
+            gameDisplay.blit(img, (300, 225))
 
             button1_img = pygame.image.load("resources/button1-2.png")
             gameDisplay.blit(button1_img, (365, 300, 275, 62))
@@ -167,6 +156,10 @@ def menu_page(gameDisplay):
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
 
+            font = pygame.font.SysFont(None, 50)
+            img = font.render('Bienvenido a Carta Blanca!', True, black)
+            gameDisplay.blit(img, (300, 225))
+
             button2_img = pygame.image.load("resources/button2-2.png")
             gameDisplay.blit(button2_img, (365, 375, 275, 62))
 
@@ -181,6 +174,11 @@ def menu_page(gameDisplay):
         else:
             table = pygame.image.load("resources/table.png")
             gameDisplay.blit(table, (0, 0))
+
+            font = pygame.font.SysFont(None, 50)
+            img = font.render('Bienvenido a Carta Blanca!', True, black)
+            gameDisplay.blit(img, (300, 225))
+
             button2_img = pygame.image.load("resources/button2.png")
             button1_img = pygame.image.load("resources/button1.png")
 
