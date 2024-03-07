@@ -192,6 +192,8 @@ def gamemode_menu(gameDisplay):
                 menu_page(gameDisplay)
             elif freecell_button.top_rect.collidepoint(posm):
                 import main
+            elif infinite_button.top_rect.collidepoint(posm):
+                import infinite
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
