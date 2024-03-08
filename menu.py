@@ -194,6 +194,8 @@ def gamemode_menu(gameDisplay):
                 import main
             elif infinite_button.top_rect.collidepoint(posm):
                 import infinite
+            elif bakers_button.top_rect.collidepoint(posm):
+                import bakers
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
