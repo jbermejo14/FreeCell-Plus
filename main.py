@@ -11,6 +11,7 @@ table = pygame.image.load("resources/table.png")
 gameDisplay.blit(table, (0, 0))
 card_style = menu.card_style
 num_of_moves = 0
+movement = False
 
 class MoveList:
     def __init__(self, move):
@@ -39,10 +40,11 @@ class Card:
             self.color = "black"
 
     def clicked(self):
-        global append, num_of_moves
+        global append, num_of_moves, movement
         for i in front_row_list:
             if i.selected is True and i is not self and i.color != self.color and int(i.number) == int(self.number) - 1:
                 append = 0
+                movement = True
                 if i in box_card_list:
                     box_card_list.remove(i)
                     for box in box_list:
@@ -550,6 +552,7 @@ class Card:
                 for i in aux_card_list:
                     for c in i:
                         gameDisplay.blit(c.card, (c.coords[0], c.coords[1], 102, 155))
+
                 pygame.display.update()
 
 
@@ -592,10 +595,6 @@ class Boxes:
                 def sort_func(e):
                     for i in e:
                         return i.coords[1]
-
-                Move = MoveList(num_of_moves)
-                num_of_moves = num_of_moves + 1
-                list_of_moves.append(Move)
 
                 for i in card_list:
                     if i != []:
@@ -1509,10 +1508,6 @@ def front_row():
                     front_row_list.append(i[-1])
             else:
                 front_row_list.append(i[-1])
-
-
-
-
         elif len(box_card_list) == 0:
             if i[-1].color != i[-2].color and int(i[-1].number) == int(i[-2].number) - 1:
                 if i[-2].color != i[-3].color and int(i[-2].number) == int(i[-3].number) - 1:
@@ -1554,9 +1549,6 @@ def front_row():
                     front_row_list.append(i[-2])
             else:
                 front_row_list.append(i[-1])
-
-
-
         i.sort(key=sort_func)
     return front_row_list
 
@@ -1596,7 +1588,7 @@ for i in aux_card_list:
 pygame.display.update()
 
 def check_click():
-    global front_row_list
+    global front_row_list, movement, num_of_moves
     posm = pygame.mouse.get_pos()
     front_row_list = front_row()
     for box in box_list:
@@ -1608,7 +1600,6 @@ def check_click():
     for house in house_list:
         if house.top_rect.collidepoint(posm):
             house.clicked()
-    print(len(list_of_moves))
     for col in column_list:
         if len(col.col) == 0:
             if col.top_rect.collidepoint(posm):
@@ -1634,7 +1625,6 @@ def ending():
     return gameExit
 
 while not gameExit:
-
     ending()
 
     if pygame.mouse.get_pressed()[0] is True:
