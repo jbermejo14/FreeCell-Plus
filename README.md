@@ -9,8 +9,8 @@ Freecell Plus is a feature-rich Freecell card game with additional game modes, d
   - **Infinite**: No limit on card stacking.
   - **Baker's**: Sequences are built by suit instead of by alternate color.
   - **Double**: Play with two decks of cards.
-- **Additional Game Modes**:
-  - **Infinite**: No limit on card stacking.
+- **Personalation**:
+  - Change the style of the cards.
     
 ## Installation
 
