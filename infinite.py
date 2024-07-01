@@ -11,6 +11,7 @@ table = pygame.image.load("resources/table.png")
 gameDisplay.blit(table, (0, 0))
 card_style = menu.card_style
 
+
 class Card:
     def __init__(self, suit, number):
         self.suit = suit
@@ -57,20 +58,23 @@ class Card:
                     for lista in card_list:
                         if i in lista:
                             lista.remove(i)
+
                             def testttt(num, lista, num2):
                                 global append
                                 for col in card_list:
                                     for card in col:
                                         if i.color == "red":
                                             if num == 35 or num == 105 or num == 175 or num == 245 or num == 315:
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color != card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
                                                     append = num2
                                                     return card
                                             if num == 70 or num == 140 or num == 210 or num == 280:
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color == card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
@@ -79,7 +83,8 @@ class Card:
                                         elif i.color == "black":
                                             if (num == 35 or num == 105 or num == 175 or num == 245 or num == 315
                                                     or num == 385):
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color != card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
@@ -87,7 +92,8 @@ class Card:
                                                     return card
                                             if (num == 70 or num == 140 or num == 210 or num == 280 or num == 350
                                                     or num == 420):
-                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[1] - num
+                                                if (i.coords[0] == card.coords[0] and i.coords[1] == card.coords[
+                                                    1] - num
                                                         and i.color == card.color and int(i.number) - num2 == int(
                                                             card.number)):
                                                     lista.remove(card)
@@ -614,6 +620,7 @@ class Column:
                     for lista in card_list:
                         if i in lista:
                             lista.remove(i)
+
                             def testttt(num, lista, num2):
                                 global append
                                 for col in card_list:
@@ -1179,6 +1186,7 @@ class House:
         pygame.display.update()
         for i in front_row_list:
             i.selected = False
+
 
 House1 = House((570, 0), "Diamonds")
 House2 = House((686, 0), "Hearts")
@@ -2402,6 +2410,7 @@ def front_row():
         i.sort(key=sort_func)
     return front_row_list
 
+
 for i in range(52):
     for card in card_list_init:
         if len(list1) != 0:
@@ -2437,6 +2446,7 @@ for i in aux_card_list:
 
 pygame.display.update()
 
+
 def check_click():
     global front_row_list
     posm = pygame.mouse.get_pos()
@@ -2454,6 +2464,7 @@ def check_click():
         if len(col.col) == 0:
             if col.top_rect.collidepoint(posm):
                 col.clicked()
+
 
 def ending():
     global gameExit
@@ -2473,6 +2484,7 @@ def ending():
         gameExit = True
 
     return gameExit
+
 
 while not gameExit:
 
