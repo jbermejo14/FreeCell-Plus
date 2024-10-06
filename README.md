@@ -9,9 +9,16 @@ Freecell Plus is a feature-rich Freecell card game with additional game modes, d
   - **Infinite**: No limit on card stacking.
   - **Baker's**: Sequences are built by suit instead of by alternate color.
   - **Double**: Play with two decks of cards.
+
+ ![Modes](resources/modes.png)
+
+ ![gameplay](resources/gameplay.png)
+
 - **Personalation**:
   - Change the style of the cards.
-    
+  
+ ![Customization](resources/customization.png)
+
 ## Installation
 
 To run Freecell Plus, you need Python and Pygame installed on your system.
